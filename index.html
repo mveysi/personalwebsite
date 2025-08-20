@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            background-color: #fff;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .nav {
+            background-color: #fff;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .nav a:hover {
+            color: #007bff;
+        }
+        .content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .social-links {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .social-links a {
+            margin: 0 1rem;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #007bff;
+            transform: translateY(-3px);
+        }
+        .social-links i {
+            margin-right: 5px;
+        }
+        .cv-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 2rem auto;
+            display: block;
+            object-fit: cover;
+            border: 3px solid #007bff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>@ Muhammet Veysi Kahraman</h1>
+        <p>Öğrenci</p>
+    </div>
+    
+    <div class="nav">
+        <a href="index.html">Hakkımda</a>
+        <a href="education.html">Eğitim</a>
+        <a href="experience.html">Deneyim</a>
+        <a href="competitions.html">Yarışmalar</a>
+        <a href="publications.html">Yayınlar</a>
+    </div>
+
+    <div class="content">
+        <section id="about">
+            <img src="C:\Users\Dell\OneDrive\Masaüstü\blog_sitesi_güncel\img\1734778311014.jpg" alt="Muhammet Veysi Kahraman" class="profile-image">
+            <h2>Hakkımda</h2>
+            <p>Buraya kendiniz hakkında profesyonel bir açıklama yazabilirsiniz. Uzmanlık alanlarınızı, ilgi alanlarınızı ve çalışma yaklaşımınızı belirtebilirsiniz.</p>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/muhammetveysikahraman/" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/mveysi" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.kaggle.com/mveysikahraman" target="_blank">
+                    <i class="fab fa-kaggle"></i> Kaggle
+                </a>
+            </div>
+
+            <center>
+                <a href="C:\Users\Dell\OneDrive\Masaüstü\blog_sitesi_güncel\MuhammetVeysiKahraman_CV.pdf" target="_blank" class="cv-button">
+                    <i class="fas fa-eye"></i> CV'Yİ GÖRÜNTÜLE
+                </a>
+            </center>
+        </section>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Tüm hakları saklıdır.</p>
+    </div>
+</body>
+</html>
