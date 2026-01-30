@@ -141,6 +141,53 @@
         .profile-image:hover {
             transform: scale(1.05);
         }
+        @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 1rem;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+            .side-nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+            .content {
+                text-align: center;
+            }
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                margin: 1rem auto;
+            }
+            .social-links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            .social-links a {
+                width: 100%;
+                max-width: 250px;
+                margin: 0;
+            }
+            .lang-switcher {
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>

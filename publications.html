@@ -111,6 +111,34 @@
             background-color: #ddd;
             margin: 0 auto 1.5rem;
         }
+        @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 1rem;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+            .side-nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+            .lang-switcher {
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
