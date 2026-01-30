@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
+    <title data-i18n="title">Personal Website</title>
     
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -16,31 +16,81 @@
             line-height: 1.6;
             color: #333;
         }
-        .header {
-            background-color: #fff;
-            padding: 2rem;
-            text-align: center;
-            border-bottom: 1px solid #eee;
+        .layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            min-height: 100vh;
         }
-        .nav {
-            background-color: #fff;
-            padding: 1rem;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .sidebar {
+            width: 200px;
+            padding: 3rem 1.5rem 3rem 0;
+            border-right: 1px solid #eee;
         }
-        .nav a {
-            color: #333;
+        .side-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .side-nav a {
+            color: #666;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            padding: 0.25rem 0;
+            transition: color 0.2s ease;
         }
-        .nav a:hover {
-            color: #007bff;
+        .side-nav a:hover {
+            color: #000;
+        }
+        .side-nav a.active {
+            color: #000;
+            font-weight: 600;
+        }
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            background-color: #f1f5ff;
+            border-radius: 999px;
+            padding: 0.25rem;
+            font-size: 0.85rem;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+        }
+        .lang-btn {
+            border: none;
+            background: transparent;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: #333;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .lang-btn.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .lang-btn:not(.active):hover {
+            background-color: #e0e7ff;
+        }
+        .main-content {
+            flex: 1;
+            padding: 3rem 2rem;
+        }
+        .header {
+            text-align: left;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 1rem;
+        }
+        .header h1 {
+            margin: 0 0 0.25rem 0;
         }
         .content {
-            padding: 2rem;
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
         .social-links {
@@ -51,11 +101,19 @@
             margin: 0 1rem;
             color: #333;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid #000;
+            border-radius: 999px;
+            min-width: 130px;
         }
         .social-links a:hover {
             color: #007bff;
+            border-color: #007bff;
             transform: translateY(-3px);
         }
         .social-links i {
@@ -70,13 +128,6 @@
             border-radius: 5px;
             margin: 1rem 0;
         }
-        .footer {
-            background-color: #f8f9fa;
-            color: #333;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
         .profile-image {
             width: 200px;
             height: 200px;
@@ -84,7 +135,6 @@
             margin: 2rem auto;
             display: block;
             object-fit: cover;
-            border: 3px solid #007bff;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
@@ -94,54 +144,130 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>@ Muhammet Veysi Kahraman</h1>
-        <p>Öğrenci</p>
-    </div>
-    
-    <div class="nav">
-        <a href="index.html">Hakkımda</a>
-        <a href="education.html">Eğitim</a>
-        <a href="experience.html">Deneyim</a>
-        <a href="competitions.html">Yarışmalar</a>
-        <a href="publications.html">Yayınlar</a>
-    </div>
+    <div class="layout">
+        <aside class="sidebar">
+            <nav class="side-nav">
+                <a href="index.html" class="active" data-i18n="nav_about">About</a>
+                <a href="education.html" data-i18n="nav_education">Education</a>
+                <a href="experience.html" data-i18n="nav_experience">Experience</a>
+                <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
+                <a href="publications.html" data-i18n="nav_publications">Publications</a>
+            </nav>
+        </aside>
 
-    <div class="content">
-        <section id="about">
-            <img src=".\img\1734778311014.jpg" alt="Muhammet Veysi Kahraman" class="profile-image">
-            <h2>Hakkımda</h2>
-            <p>Merhaba, ben Muhammet Veysi Kahraman. Matematik alanında lisans eğitimime devam ederken aynı zamanda Veri Bilimi, Makine Öğrenmesi, Derin Öğrenme, Doğal Dil İşleme(NLP,LLM,AI Agents) ve görüntü işleme üzerine çalışmalar yapıyorum.</p>
-            </p>Yapay zekâ teknolojilerindeki gelişmeleri yakından takip ediyor, bu alanlarda bireysel ve ekip projeleri geliştiriyorum. Ayrıca farklı yarışmalara katılarak hem bilgi birikimimi uygulamaya döküyor hem de yeni deneyimler kazanıyorum.</p>
-            </p>Amacım; matematiksel bakış açımı yapay zekâ alanındaki uygulamalarla birleştirerek yenilikçi çözümler üretmek ve bu süreçte öğrendiklerimi paylaşmak.</p>
-            
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/muhammetveysikahraman/" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://github.com/mveysi" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.kaggle.com/mveysikahraman" target="_blank">
-                    <i class="fab fa-kaggle"></i> Kaggle
-                </a>
+        <main class="main-content">
+            <div class="header">
+                <h1 data-i18n="hero_name">Muhammet Veysi Kahraman</h1>
+                <p data-i18n="hero_role">JR. AI Developer</p>
             </div>
 
-            <center>
-                <a href=".\img\MuhammetVeysiKahraman_CV.pdf" target="_blank" class="cv-button">
-                    <i class="fas fa-eye"></i> CV'Yİ GÖRÜNTÜLE
-                </a>
-            </center>
-        </section>
+            <div class="content">
+                <section id="about">
+                    <img src=".\img\1734778311014.jpg" alt="Muhammet Veysi Kahraman" class="profile-image">
+                    <h2 data-i18n="about_title">About</h2>
+                    <p data-i18n="about_p1">Hi, I'm Muhammet Veysi Kahraman. While continuing my undergraduate studies in Mathematics, I work on Data Science, Machine Learning, Deep Learning, Natural Language Processing (NLP, LLM, AI Agents) and computer vision.</p>
+                    <p data-i18n="about_p2">I closely follow the advances in artificial intelligence technologies and develop both individual and team projects in these fields. By participating in various competitions, I both put my knowledge into practice and gain new experiences.</p>
+                    <p data-i18n="about_p3">My goal is to combine my mathematical perspective with applications in artificial intelligence to produce innovative solutions and share what I learn throughout this journey.</p>   
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/muhammetveysikahraman/" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/mveysi" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://www.kaggle.com/mveysikahraman" target="_blank">
+                            <i class="fab fa-kaggle"></i> Kaggle
+                        </a>
+                    </div>
+
+                    <center>
+                        <a href=".\img\website_cv.pdf" target="_blank" class="cv-button">
+                            <i class="fas fa-eye"></i> <span data-i18n="cv_button">VIEW CV</span>
+                        </a>
+                    </center>
+                </section>
+            </div>
+        </main>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2025 Tüm hakları saklıdır.</p>
+    <div class="lang-switcher" aria-label="Language switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="tr">TR</button>
     </div>
+
+    <script>
+        (function() {
+            const translations = {
+                tr: {
+                    title: "Kişisel Web Sitesi",
+                    hero_name: "@ Muhammet Veysi Kahraman",
+                    hero_role: "JR. AI Developer",
+                    nav_about: "Hakkımda",
+                    nav_education: "Eğitim",
+                    nav_experience: "Deneyimler",
+                    nav_competitions: "Yarışmalar",
+                    nav_publications: "Yayınlar",
+                    about_title: "Hakkımda",
+                    about_p1: "Merhaba, ben Muhammet Veysi Kahraman. Matematik alanında lisans eğitimime devam ederken aynı zamanda Veri Bilimi, Makine Öğrenmesi, Derin Öğrenme, Doğal Dil İşleme (NLP, LLM, AI Agents) ve görüntü işleme üzerine çalışmalar yapıyorum.",
+                    about_p2: "Yapay zekâ teknolojilerindeki gelişmeleri yakından takip ediyor, bu alanlarda bireysel ve ekip projeleri geliştiriyorum. Ayrıca farklı yarışmalara katılarak hem bilgi birikimimi uygulamaya döküyor hem de yeni deneyimler kazanıyorum.",
+                    about_p3: "Amacım; matematiksel bakış açımı yapay zekâ alanındaki uygulamalarla birleştirerek yenilikçi çözümler üretmek ve bu süreçte öğrendiklerimi paylaşmak.",
+                    cv_button: "CV'Yİ GÖRÜNTÜLE"
+                },
+                en: {
+                    title: "Personal Website",
+                    hero_name: "@ Muhammet Veysi Kahraman",
+                    hero_role: "JR. AI Developer",
+                    nav_about: "About",
+                    nav_education: "Education",
+                    nav_experience: "Experience",
+                    nav_competitions: "Competitions",
+                    nav_publications: "Publications",
+                    about_title: "About",
+                    about_p1: "Hi, I'm Muhammet Veysi Kahraman. While continuing my undergraduate studies in Mathematics, I work on Data Science, Machine Learning, Deep Learning, Natural Language Processing (NLP, LLM, AI Agents) and computer vision.",
+                    about_p2: "I closely follow the advances in artificial intelligence technologies and develop both individual and team projects in these fields. By participating in various competitions, I both put my knowledge into practice and gain new experiences.",
+                    about_p3: "My goal is to combine my mathematical perspective with applications in artificial intelligence to produce innovative solutions and share what I learn throughout this journey.",
+                    cv_button: "VIEW CV"
+                }
+            };
+
+            function setLanguage(lang) {
+                const dict = translations[lang] || translations.tr;
+                document.documentElement.lang = lang;
+                document.querySelectorAll("[data-i18n]").forEach(function(el) {
+                    const key = el.getAttribute("data-i18n");
+                    if (dict[key]) {
+                        el.textContent = dict[key];
+                    }
+                });
+                document.querySelectorAll(".lang-btn").forEach(function(btn) {
+                    btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+                });
+                try {
+                    localStorage.setItem("lang", lang);
+                } catch (e) {
+                    // localStorage erişilemiyorsa sessizce geç
+                }
+            }
+
+            document.querySelectorAll(".lang-btn").forEach(function(btn) {
+                btn.addEventListener("click", function() {
+                    const lang = btn.getAttribute("data-lang");
+                    setLanguage(lang);
+                });
+            });
+
+            let initialLang = "en";
+            try {
+                const saved = localStorage.getItem("lang");
+                if (saved && (saved === "tr" || saved === "en")) {
+                    initialLang = saved;
+                }
+            } catch (e) {
+                // varsayılan Türkçe
+            }
+            setLanguage(initialLang);
+        })();
+    </script>
 </body>
 </html>
-
-
-
-
-

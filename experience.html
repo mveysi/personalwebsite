@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deneyimlerim</title>
+    <title data-i18n="title">Deneyimlerim</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,184 +12,331 @@
             line-height: 1.6;
             color: #333;
         }
-        .header {
-            background-color: #fff;
-            padding: 2rem;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-        .nav {
-            background-color: #fff;
-            padding: 1rem;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .nav a {
-            color: #333;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
-        }
-        .nav a:hover {
-            color: #007bff;
-        }
-        .content {
-            padding: 2rem;
-            max-width: 800px;
+        .layout {
+            max-width: 1100px;
             margin: 0 auto;
+            display: flex;
+            min-height: 100vh;
         }
-        .experience-item {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            border: 1px solid #eee;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+        .sidebar {
+            width: 200px;
+            padding: 3rem 1.5rem 3rem 0;
+            border-right: 1px solid #eee;
         }
-        .experience-item:hover {
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        .side-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
         }
-        .experience-title {
-            color: #007bff;
-            margin-bottom: 0.5rem;
-        }
-        .experience-date {
+        .side-nav a {
             color: #666;
-            font-size: 0.9rem;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.25rem 0;
+            transition: color 0.2s ease;
+        }
+        .side-nav a:hover {
+            color: #000;
+        }
+        .side-nav a.active {
+            color: #000;
+            font-weight: 600;
+        }
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            background-color: #f1f5ff;
+            border-radius: 999px;
+            padding: 0.25rem;
+            font-size: 0.85rem;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+        }
+        .lang-btn {
+            border: none;
+            background: transparent;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: #333;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .lang-btn.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .lang-btn:not(.active):hover {
+            background-color: #e0e7ff;
+        }
+        .main-content {
+            flex: 1;
+            padding: 3rem 2rem;
+        }
+        .header {
+            text-align: left;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 1rem;
+        }
+        .header h1 {
+            margin: 0 0 0.25rem 0;
+        }
+        .timeline {
+            margin-top: 2.5rem;
+        }
+        .experience-entry {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .company-logo {
+            max-height: 85px;
+            width: auto;
+            margin-bottom: 1.5rem;
+        }
+        .entry-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+        .entry-company {
+            color: #555;
             margin-bottom: 1rem;
+            font-weight: bold;
         }
-        .experience-description {
-            margin-top: 1rem;
-        }
-        .tech-stack {
-            margin-top: 1rem;
-            padding: 0.5rem;
-            background-color: #f8f9fa;
-            border-radius: 3px;
-        }
-        .tech-stack span {
-            display: inline-block;
-            background-color: #e9ecef;
-            padding: 0.3rem 0.6rem;
-            margin: 0.2rem;
-            border-radius: 3px;
+        .entry-date {
             font-size: 0.9rem;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 1.25rem;
         }
-        .project-image {
-            max-width: 80%;
-            height: auto;
-            margin: 15px 0;
-            border-radius: 8px;
+        .entry-separator {
+            width: 80px;
+            height: 1px;
+            background-color: #ddd;
+            margin: 0 auto 1.5rem;
+        }
+        .entry-body {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .entry-body p {
+            margin-bottom: 0.75rem;
+        }
+        .entry-body ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Deneyimlerim</h1>
-    </div>
-    
-    <div class="nav">
-        <a href="index.html">Hakkımda</a>
-        <a href="education.html">Eğitim</a>
-        <a href="experience.html">Deneyim</a>
-        <a href="competitions.html">Yarışmalar</a>
-        <a href="publications.html">Yayınlar</a>
-    </div>
+    <div class="layout">
+        <aside class="sidebar">
+            <nav class="side-nav">
+                <a href="index.html" data-i18n="nav_about">About</a>
+                <a href="education.html" data-i18n="nav_education">Education</a>
+                <a href="experience.html" class="active" data-i18n="nav_experience">Experience</a>
+                <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
+                <a href="publications.html" data-i18n="nav_publications">Publications</a>
+            </nav>
+        </aside>
 
-    <div class="content">
+        <main class="main-content">
+            <div class="header">
+                <h1 data-i18n="page_title">Experience</h1>
+            </div>
 
-        <div class="experience-item">
-            <h3 class="experience-title">İmona Technologies A.Ş.</h3>
-            <div class="experience-date">Nisan-Mayıs 2025</div>
-            <img src=".\img\imona_logo_color.png" alt="İmona Technologies A.Ş." style="max-width: 30%; height: auto; margin: 15px 0; border-radius: 8px;">
-            <div class="experience-description">
-                <p>Make.com kullanarak sosyal medya otomasyon sistemi geliştirme üzerine çalıştım; içerik süreçlerinin otomasyonu ve AI Agent’larla çalışma konusunda deneyim kazandım. Haftalık sunumlarla takım içi iletişim ve iş hayatındaki profesyonel sunum becerileri konusunda deneyim kazandım.</p>
-            </div>
-            <div class="tech-stack">
-                <span>Make.com</span>
-                <span>Otomasyon</span>
-                <span>AI Agent</span>
-                <span>Sosyal Medya</span>
-            </div>
-        </div>
+            <section class="timeline">
+                <article class="experience-entry">
+                    <img src="./img/inosens-.png" alt="Inosens" class="company-logo" style="max-height: 110px;">
+                    <h2 class="entry-title" data-i18n="imona_title">Inosens</h2>
+                    <p class="entry-company">AI Developer</p>
+                    <p class="entry-date" data-i18n="imona_date">September 2025 - February 2026</p>
+                    <div class="entry-separator"></div>
+                    <div class="entry-body">
+                        <ul>
+                            <li data-i18n="imona_desc1">Built time series forecasting models (Prophet, ARIMA, SARIMA) on production datasets.</li>
+                            <li data-i18n="imona_desc2">Analyzed wearable sensor signals using NeuroKit, performing data cleaning and feature extraction.</li>
+                            <li data-i18n="imona_desc3">Developed machine learning models to predict patient scores in physiotherapy games.</li>
+                            <li data-i18n="imona_desc4">Trained video-based models with PyTorch and MediaPipe to evaluate exercise correctness.</li>
+                        </ul>
+                    </div>
+                </article>
 
-        <div class="experience-item">
-            <h3 class="experience-title">Venator İHA</h3>
-            <img src=".\img\1648661567174.jpg" alt="Venator İHA" style="max-width: 60%; height: auto; margin: 15px 0; border-radius: 8px;">
-            <div class="experience-date">2023 - 2025</div>
-            <div class="experience-description">
-                <p>İBU Venator İHA projesinde yazılım ekibinde görev aldım. Bu projede derin öğrenme ve görüntü işleme kullanarak yangın tespiti sağlayan bir model geliştirdim ve bu modeli Raspberry Pi üzerinde çalıştırmak için çalışmalar yaptım.</p>
-                <p>Başarılar ve Sorumluluklar:</p>
-                <ul>
-                    <li>Nesne tespit algoritmaları geliştirme ve optimizasyon</li>
-                    <li>Otonom iniş-kalkış sistemleri tasarımı</li>
-                    <li>CNN, R-CNN ve YOLO algoritmalarını Raspberry Pi üzerinde uygulama</li>
-                </ul>
-            </div>
-            <div class="tech-stack">
-                <span>Python</span>
-                <span>YOLO</span>
-                <span>OpenCV</span>
-                <span>Derin Öğrenme</span>
-                <span>Raspberry Pi</span>
-            </div>
-        </div>
+                <article class="experience-entry">
+                    <img src="./img/imona_logo_color.png" alt="Imona Technologies Inc." class="company-logo">
+                    <h2 class="entry-title" data-i18n="imona_title_second">Imona Technologies Inc.</h2>
+                    <p class="entry-company">AI Developer</p>
+                    <p class="entry-date" data-i18n="imona_date_second">April - May 2025</p>
+                    <div class="entry-separator"></div>
+                    <div class="entry-body">
+                        <p data-i18n="imona_desc_second">I worked on developing a social media automation system using Make.com, gaining experience in automating content workflows and working with AI Agents. Through weekly presentations, I also improved my communication skills within the team and my professional presentation skills in business life.</p>
+                    </div>
+                </article>
 
-        <div class="experience-item">
-            <h3 class="experience-title">GitHub Projeleri</h3>
-            <img src=".\img\GitHub-Logo.png" alt="GitHub Logo" style="max-width: 30%; height: auto; margin: 15px 0; border-radius: 8px;">
-            <div class="experience-date">2023 - Devam Ediyor</div>
-            <div class="experience-description">
-                <p>GitHub profilime "CNN ile Akciğer Hastalık Tespiti" ve "Makine Öğrenmesi ile Kalp Hastalık Tespiti" başta olmak üzere çeşitli projeler yükledim. Bu projelerde yüksek doğruluk oranlarına ulaşarak başarılı sonuçlar elde ettim. Çalışmalarımda gerçek dünya problemlerine çözüm geliştirmeye odaklanıyorum.</p>
-                <p>Öne Çıkan Projeler:</p>
-                <ul>
-                    <li><a href="https://github.com/mveysi/Feature-Engineering-Diabetes" target="_blank" style="color: #007bff; text-decoration: none;">Feature-Engineering-Diabetes</a> - Diyabet hastalığının tahmini için özellik mühendisliği ve makine öğrenmesi modeli</li>
-                    <li><a href="https://github.com/mveysi/Heart-Diseases-Machine-Learning" target="_blank" style="color: #007bff; text-decoration: none;">Heart-Diseases-Machine-Learning</a> - Kalp hastalıklarının tahmini için makine öğrenmesi modeli</li>
-                    <li><a href="https://github.com/mveysi/Breast-Cancer-ML" target="_blank" style="color: #007bff; text-decoration: none;">Breast-Cancer-ML</a> - Meme kanseri tespiti için makine öğrenmesi modeli</li>
-                    <li><a href="https://github.com/mveysi/Lung-Disease-CNN" target="_blank" style="color: #007bff; text-decoration: none;">Lung-Disease-CNN</a> - Akciğer hastalıkları tespiti için CNN modeli</li>
-                    <li><a href="https://github.com/mveysi/Stress-Machine-Learning" target="_blank" style="color: #007bff; text-decoration: none;">Stress-Machine-Learning</a> - Stres seviyesi tahmini için makine öğrenmesi modeli</li>
-                    <li><a href="https://github.com/mveysi/Advertising-Machine-Learning-" target="_blank" style="color: #007bff; text-decoration: none;">Advertising-Machine-Learning</a> - Reklam etkinliği tahmini için makine öğrenmesi modeli</li>
-                    <li><a href="https://github.com/mveysi/Salary-Machine-Learning" target="_blank" style="color: #007bff; text-decoration: none;">Salary-Machine-Learning</a> - Maaş tahmini için makine öğrenmesi modeli</li>
-                    <li><a href="https://github.com/mveysi/House-Price-ML" target="_blank" style="color: #007bff; text-decoration: none;">House-Price-ML</a> - Ev fiyatı tahmini için makine öğrenmesi modeli</li>
-                    <li><a href="https://github.com/mveysi/Feature-Engineering-TelcoChurn" target="_blank" style="color: #007bff; text-decoration: none;">Feature-Engineering-TelcoChurn</a> - Müşteri kaybı tahmini için özellik mühendisliği ve makine öğrenmesi modeli</li>
-                </ul>
-            </div>
-            <div class="tech-stack">
-                <span>Python</span>
-                <span>Derin Öğrenme</span>
-                <span>CNN</span>
-                <span>Scikit-learn</span>
-                <span>TensorFlow</span>
-                <span>Keras</span>
-            </div>
-        </div>
+                <article class="experience-entry">
+                    <img src=".\img\1648661567174.jpg" alt="Venator UAV" class="company-logo">
+                    <h2 class="entry-title" data-i18n="venator_title">Venator UAV</h2>
+                    <p class="entry-company">IBU Venator UAV Software Team</p>
+                    <p class="entry-date" data-i18n="venator_date">2023 - 2025</p>
+                    <div class="entry-separator"></div>
+                    <div class="entry-body">
+                        <p data-i18n="venator_p1">I worked in the software team of the IBU Venator UAV project. In this project, I developed a model that detects fires using deep learning and computer vision, and worked on running this model on Raspberry Pi.</p>
+                        <p data-i18n="venator_p2">Achievements and Responsibilities:</p>
+                        <ul>
+                            <li data-i18n="venator_li1">Developing and optimizing object detection algorithms</li>
+                            <li data-i18n="venator_li2">Designing autonomous take-off and landing systems</li>
+                            <li data-i18n="venator_li3">Implementing CNN, R-CNN and YOLO algorithms on Raspberry Pi</li>
+                        </ul>
+                    </div>
+                </article>
 
-        <div class="experience-item">
-            <h3 class="experience-title">Kaggle Projeleri</h3>
-            <img src=".\img\03a7wgfE_400x400.jpg" alt="Kaggle Logo" style="max-width: 20%; height: auto; margin: 15px 0; border-radius: 8px;">
-            <div class="experience-date">2023 - Devam Ediyor</div>
-            <div class="experience-description">
-                <p>Kaggle platformunda veri bilimi ve makine öğrenmesi yarışmalarına aktif katılım sağlıyorum. Yaptığım projeler genellikle sınıflandırma ve görüntü işleme üzerine oluyor.</p>
-                <p>Öne Çıkan Projeler:</p>
-                <ul>
-                    <li><a href="https://www.kaggle.com/code/mveysikahraman/classification-pca" target="_blank" style="color: #007bff; text-decoration: none;">Classification + PCA</a> - Sınıflandırma ve boyut indirgeme teknikleri kullanarak veri analizi</li>
-                    <li><a href="https://www.kaggle.com/code/mveysikahraman/brain-tumor-mri-cnn" target="_blank" style="color: #007bff; text-decoration: none;">Brain-Tumor MRI : +CNN</a> - Beyin tümörü tespiti için CNN modeli</li>
-                </ul>
-            </div>
-            <div class="tech-stack">
-                <span>Python</span>
-                <span>CNN</span>
-                <span>PCA</span>
-                <span>Scikit-learn</span>
-                <span>TensorFlow</span>
-                <span>Keras</span>
-            </div>
-        </div>
-          
+                <!-- GitHub and Kaggle sections removed as requested -->
+            </section>
+        </main>
     </div>
 
-    <div class="footer" style="text-align: center; padding: 1rem; background-color: #f8f9fa; margin-top: 2rem;">
-        <p>&copy; 2025 Tüm hakları saklıdır.</p>
+    <div class="lang-switcher" aria-label="Language switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="tr">TR</button>
     </div>
+
+    <script>
+        (function() {
+            const translations = {
+                tr: {
+                    title: "Deneyimlerim",
+                    page_title: "Deneyimler",
+                    nav_about: "Hakkımda",
+                    nav_education: "Eğitim",
+                    nav_experience: "Deneyimler",
+                    nav_competitions: "Yarışmalar",
+                    nav_publications: "Yayınlar",
+                    imona_title: "Inosens",
+                    imona_date: "Eylül 2025 - Şubat 2026",
+                    imona_desc1: "Üretim veri setleri üzerinde zaman serisi tahmin modelleri (Prophet, ARIMA, SARIMA) geliştirdim.",
+                    imona_desc2: "NeuroKit kullanarak giyilebilir sensör sinyallerini analiz ettim, veri temizleme ve özellik çıkarımı gerçekleştirdim.",
+                    imona_desc3: "Fizyoterapi oyunlarında hasta skorlarını tahmin etmek için makine öğrenmesi modelleri geliştirdim.",
+                    imona_desc4: "PyTorch ve MediaPipe ile egzersiz doğruluğunu değerlendirmek için video tabanlı modeller eğittim.",
+                    venator_title: "Venator İHA",
+                    venator_date: "2023 - 2025",
+                    venator_p1: "İBU Venator İHA projesinde yazılım ekibinde görev aldım. Bu projede derin öğrenme ve görüntü işleme kullanarak yangın tespiti sağlayan bir model geliştirdim ve bu modeli Raspberry Pi üzerinde çalıştırmak için çalışmalar yaptım.",
+                    venator_p2: "Başarılar ve Sorumluluklar:",
+                    venator_li1: "Nesne tespit algoritmaları geliştirme ve optimizasyon",
+                    venator_li2: "Otonom iniş-kalkış sistemleri tasarımı",
+                    venator_li3: "CNN, R-CNN ve YOLO algoritmalarını Raspberry Pi üzerinde uygulama",
+                    venator_stack1: "Python",
+                    venator_stack2: "YOLO",
+                    venator_stack3: "OpenCV",
+                    venator_stack4: "Derin Öğrenme",
+                    venator_stack5: "Raspberry Pi",
+                    github_title: "GitHub Projeleri",
+                    github_date: "2023 - Devam Ediyor",
+                    github_p1: "GitHub profilime \"CNN ile Akciğer Hastalık Tespiti\" ve \"Makine Öğrenmesi ile Kalp Hastalık Tespiti\" başta olmak üzere çeşitli projeler yükledim. Bu projelerde yüksek doğruluk oranlarına ulaşarak başarılı sonuçlar elde ettim. Çalışmalarımda gerçek dünya problemlerine çözüm geliştirmeye odaklanıyorum.",
+                    github_p2: "Öne Çıkan Projeler:",
+                    github_stack1: "Python",
+                    github_stack2: "Derin Öğrenme",
+                    github_stack3: "CNN",
+                    github_stack4: "Scikit-learn",
+                    github_stack5: "TensorFlow",
+                    github_stack6: "Keras",
+                    kaggle_title: "Kaggle Projeleri",
+                    kaggle_date: "2023 - Devam Ediyor",
+                    kaggle_p1: "Kaggle platformunda veri bilimi ve makine öğrenmesi yarışmalarına aktif katılım sağlıyorum. Yaptığım projeler genellikle sınıflandırma ve görüntü işleme üzerine oluyor.",
+                    kaggle_p2: "Öne Çıkan Projeler:",
+                    kaggle_stack1: "Python",
+                    kaggle_stack2: "CNN",
+                    kaggle_stack3: "PCA",
+                    kaggle_stack4: "Scikit-learn",
+                    kaggle_stack5: "TensorFlow",
+                    kaggle_stack6: "Keras"
+                },
+                en: {
+                    title: "Experience",
+                    page_title: "Experience",
+                    nav_about: "About",
+                    nav_education: "Education",
+                    nav_experience: "Experience",
+                    nav_competitions: "Competitions",
+                    nav_publications: "Publications",
+                    imona_title: "Inosens",
+                    imona_date: "September 2025 - February 2026",
+                    imona_desc1: "Built time series forecasting models (Prophet, ARIMA, SARIMA) on production datasets.",
+                    imona_desc2: "Analyzed wearable sensor signals using NeuroKit, performing data cleaning and feature extraction.",
+                    imona_desc3: "Developed machine learning models to predict patient scores in physiotherapy games.",
+                    imona_desc4: "Trained video-based models with PyTorch and MediaPipe to evaluate exercise correctness.",
+                    venator_title: "Venator UAV",
+                    venator_date: "2023 - 2025",
+                    venator_p1: "I worked in the software team of the IBU Venator UAV project. In this project, I developed a model that detects fires using deep learning and computer vision, and worked on running this model on Raspberry Pi.",
+                    venator_p2: "Achievements and Responsibilities:",
+                    venator_li1: "Developing and optimizing object detection algorithms",
+                    venator_li2: "Designing autonomous take-off and landing systems",
+                    venator_li3: "Implementing CNN, R-CNN and YOLO algorithms on Raspberry Pi",
+                    venator_stack1: "Python",
+                    venator_stack2: "YOLO",
+                    venator_stack3: "OpenCV",
+                    venator_stack4: "Deep Learning",
+                    venator_stack5: "Raspberry Pi",
+                    github_title: "GitHub Projects",
+                    github_date: "2023 - Ongoing",
+                    github_p1: "I have uploaded various projects to my GitHub profile, especially \"Lung Disease Detection with CNN\" and \"Heart Disease Detection with Machine Learning\". I achieved high accuracy rates in these projects and obtained successful results. I focus on developing solutions to real-world problems in my work.",
+                    github_p2: "Highlighted Projects:",
+                    github_stack1: "Python",
+                    github_stack2: "Deep Learning",
+                    github_stack3: "CNN",
+                    github_stack4: "Scikit-learn",
+                    github_stack5: "TensorFlow",
+                    github_stack6: "Keras",
+                    kaggle_title: "Kaggle Projects",
+                    kaggle_date: "2023 - Ongoing",
+                    kaggle_p1: "I actively participate in data science and machine learning competitions on Kaggle. My projects are mostly focused on classification and computer vision.",
+                    kaggle_p2: "Highlighted Projects:",
+                    kaggle_stack1: "Python",
+                    kaggle_stack2: "CNN",
+                    kaggle_stack3: "PCA",
+                    kaggle_stack4: "Scikit-learn",
+                    kaggle_stack5: "TensorFlow",
+                    kaggle_stack6: "Keras"
+                }
+            };
+
+            function setLanguage(lang) {
+                const dict = translations[lang] || translations.tr;
+                document.documentElement.lang = lang;
+                document.querySelectorAll("[data-i18n]").forEach(function(el) {
+                    const key = el.getAttribute("data-i18n");
+                    if (dict[key]) {
+                        el.textContent = dict[key];
+                    }
+                });
+                document.querySelectorAll(".lang-btn").forEach(function(btn) {
+                    btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+                });
+                try {
+                    localStorage.setItem("lang", lang);
+                } catch (e) {}
+            }
+
+            document.querySelectorAll(".lang-btn").forEach(function(btn) {
+                btn.addEventListener("click", function() {
+                    const lang = btn.getAttribute("data-lang");
+                    setLanguage(lang);
+                });
+            });
+
+            let initialLang = "en";
+            try {
+                const saved = localStorage.getItem("lang");
+                if (saved && (saved === "tr" || saved === "en")) {
+                    initialLang = saved;
+                }
+            } catch (e) {}
+            setLanguage(initialLang);
+        })();
+    </script>
 </body>
 </html>
