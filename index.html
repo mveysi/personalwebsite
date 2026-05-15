@@ -151,15 +151,37 @@
         .profile-image:hover {
             transform: scale(1.05);
         }
+        /* ── Contact toggle ── */
+        .contact-toggle-btn {
+            margin-top: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: none;
+            border: 1px solid #ccc;
+            border-radius: 999px;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            font-family: inherit;
+            color: #555;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .contact-toggle-btn:hover { border-color: #007bff; color: #007bff; }
+        .contact-toggle-btn i { font-size: 0.8rem; transition: transform 0.25s; }
+        .contact-toggle-btn.open i { transform: rotate(180deg); }
         /* ── Contact form ── */
         .contact-section {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #eee;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.3s ease;
+            margin-top: 0;
         }
-        .contact-section h2 {
-            font-size: 1rem;
-            margin: 0 0 0.75rem 0;
+        .contact-section.open {
+            max-height: 600px;
+            opacity: 1;
+            margin-top: 1.25rem;
         }
         .contact-form {
             display: flex;
@@ -191,9 +213,7 @@
             box-sizing: border-box;
         }
         .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #007bff;
-        }
+        .form-group textarea:focus { border-color: #007bff; }
         .contact-submit {
             background-color: #007bff;
             color: #fff;
@@ -312,8 +332,13 @@
                     </center>
                 </section>
 
-                <section class="contact-section" id="contact">
-                    <h2 data-i18n="contact_title">Contact</h2>
+                <button class="contact-toggle-btn" id="contact-toggle" aria-expanded="false">
+                    <i class="fas fa-envelope"></i>
+                    <span data-i18n="contact_title">Contact</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+
+                <section class="contact-section" id="contact" aria-hidden="true">
                     <form class="contact-form" id="contact-form" novalidate>
                         <div class="form-group">
                             <label for="contact-name" data-i18n="contact_name">Name</label>
@@ -428,6 +453,17 @@
         })();
     </script>
     <script>
+        (function () {
+            var toggleBtn = document.getElementById('contact-toggle');
+            var section   = document.getElementById('contact');
+            toggleBtn.addEventListener('click', function () {
+                var isOpen = section.classList.toggle('open');
+                toggleBtn.classList.toggle('open', isOpen);
+                toggleBtn.setAttribute('aria-expanded', isOpen);
+                section.setAttribute('aria-hidden', !isOpen);
+            });
+        })();
+
         (function () {
             var form     = document.getElementById('contact-form');
             var feedback = document.getElementById('contact-feedback');
