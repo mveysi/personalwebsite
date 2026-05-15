@@ -73,6 +73,7 @@
     closeBtn.setAttribute('aria-label', t('closeLabel'));
     input.placeholder = t('placeholder');
     sendBtn.setAttribute('aria-label', t('sendLabel'));
+    if (greetingEl) greetingEl.textContent = t('greeting');
   }
 
   function addMessage(text, role) {
@@ -100,6 +101,7 @@
 
   // ── Open / close ───────────────────────────────────────────────────────────
   let opened = false;
+  let greetingEl = null;
 
   function openChat() {
     opened = true;
@@ -108,7 +110,7 @@
     toggle.innerHTML = '<i class="fas fa-times"></i>';
     input.focus();
     if (!messages.children.length) {
-      addMessage(t('greeting'), 'bot');
+      greetingEl = addMessage(t('greeting'), 'bot');
     }
   }
 
