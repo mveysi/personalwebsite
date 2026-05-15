@@ -426,6 +426,7 @@
                 } catch (e) {
                     // localStorage erişilemiyorsa sessizce geç
                 }
+                document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
             }
 
             document.querySelectorAll(".lang-btn").forEach(function(btn) {

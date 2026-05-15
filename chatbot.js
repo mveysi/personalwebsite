@@ -120,6 +120,7 @@
 
   toggle.addEventListener('click', () => (opened ? closeChat() : openChat()));
   closeBtn.addEventListener('click', closeChat);
+  document.addEventListener('langchange', applyLang);
 
   // ── Send ───────────────────────────────────────────────────────────────────
   async function send() {
