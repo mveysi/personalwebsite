@@ -6,6 +6,7 @@
     "build-kb": "node scripts/build_kb.mjs"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
     "openai": "^4.77.0"
   }
 }
