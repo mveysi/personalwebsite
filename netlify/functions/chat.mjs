@@ -40,9 +40,9 @@ export default async function handler(req) {
     return new Response('Method not allowed', { status: 405, headers: CORS_HEADERS });
   }
 
-  let message;
+  let message, lang;
   try {
-    ({ message } = await req.json());
+    ({ message, lang } = await req.json());
   } catch {
     return jsonResponse({ error: 'Geçersiz istek.' }, 400);
   }
@@ -50,6 +50,8 @@ export default async function handler(req) {
   if (!message?.trim()) {
     return jsonResponse({ error: 'Mesaj boş olamaz.' }, 400);
   }
+
+  const isEn = lang === 'en';
 
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
@@ -68,7 +70,9 @@ export default async function handler(req) {
       messages: [
         {
           role: 'system',
-          content: `Sen Muhammet Veysi Kahraman'ın kişisel web sitesindeki yardımcı bir asistansın. Ziyaretçilerin sorularını Türkçe ve samimi bir dille yanıtlıyorsun. Yanıtlarını yalnızca aşağıdaki bilgilere dayandır. Bilgi tabanında olmayan sorular için "Bu konuda bilgim yok, Muhammet Veysi ile doğrudan iletişime geçebilirsiniz." de.\n\n${contextText}`,
+          content: isEn
+            ? `You are a helpful assistant on Muhammet Veysi Kahraman's personal website. Answer visitors' questions in English with a friendly tone. Base your answers only on the information below. For questions not covered in the knowledge base, say "I don't have information on that. You can contact Muhammet Veysi directly."\n\n${contextText}`
+            : `Sen Muhammet Veysi Kahraman'ın kişisel web sitesindeki yardımcı bir asistansın. Ziyaretçilerin sorularını Türkçe ve samimi bir dille yanıtlıyorsun. Yanıtlarını yalnızca aşağıdaki bilgilere dayandır. Bilgi tabanında olmayan sorular için "Bu konuda bilgim yok, Muhammet Veysi ile doğrudan iletişime geçebilirsiniz." de.\n\n${contextText}`,
         },
         { role: 'user', content: message.trim() },
       ],
