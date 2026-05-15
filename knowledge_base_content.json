@@ -1,0 +1,54 @@
+{
+  "chunks": [
+    {
+      "id": "about",
+      "title": "Hakkımda - Muhammet Veysi Kahraman",
+      "content": "Muhammet Veysi Kahraman bir matematik öğrencisidir. Bolu Abant İzzet Baysal Üniversitesi Matematik Bölümü'nde 2021 yılından itibaren eğitim almaktadır. Aynı zamanda Veri Bilimi, Makine Öğrenmesi, Derin Öğrenme, Doğal Dil İşleme (NLP, LLM, AI Agents) ve görüntü işleme üzerine çalışmalar yapmaktadır. Yapay zekâ teknolojilerindeki gelişmeleri yakından takip etmekte, bireysel ve ekip projeleri geliştirmektedir. Amacı matematiksel bakış açısını yapay zekâ uygulamalarıyla birleştirerek yenilikçi çözümler üretmektir. LinkedIn: https://www.linkedin.com/in/muhammetveysikahraman/, GitHub: https://github.com/mveysi, Kaggle: https://www.kaggle.com/mveysikahraman"
+    },
+    {
+      "id": "education",
+      "title": "Eğitim",
+      "content": "Muhammet Veysi Kahraman, Bolu Abant İzzet Baysal Üniversitesi (BAIBU) Matematik Bölümü'nde lisans eğitimi almaktadır. Eğitim dönemi: 2021-2026 (devam ediyor). Not ortalaması (GPA): 2.97/4.00."
+    },
+    {
+      "id": "experience_imona",
+      "title": "Deneyim - İmona Technologies",
+      "content": "İmona Technologies A.Ş.'de Nisan - Mayıs 2025 tarihleri arasında çalıştı. Make.com kullanarak sosyal medya otomasyon sistemi geliştirme üzerine çalıştı. İçerik süreçlerinin otomasyonu ve AI Agent'larla çalışma konusunda deneyim kazandı. Haftalık sunumlarla takım içi iletişim ve profesyonel sunum becerileri geliştirdi. Kullanılan teknolojiler: Make.com, Otomasyon, AI Agent, Sosyal Medya."
+    },
+    {
+      "id": "experience_venator",
+      "title": "Deneyim - Venator İHA (İnsansız Hava Aracı)",
+      "content": "İBU Venator İHA projesinde 2023-2025 yılları arasında yazılım ekibinde görev aldı. Derin öğrenme ve görüntü işleme kullanarak yangın tespiti sağlayan bir model geliştirdi ve bu modeli Raspberry Pi üzerinde çalıştırdı. Başarılar: Nesne tespit algoritmaları geliştirme ve optimizasyon, Otonom iniş-kalkış sistemleri tasarımı, CNN, R-CNN ve YOLO algoritmalarını Raspberry Pi üzerinde uygulama. Kullanılan teknolojiler: Python, YOLO, OpenCV, Derin Öğrenme, Raspberry Pi."
+    },
+    {
+      "id": "experience_github",
+      "title": "Deneyim - GitHub Projeleri",
+      "content": "GitHub profilinde (github.com/mveysi) 2023'ten itibaren çeşitli makine öğrenmesi ve derin öğrenme projeleri bulunmaktadır. Öne çıkan projeler: Feature-Engineering-Diabetes (diyabet hastalığı tahmini), Heart-Diseases-Machine-Learning (kalp hastalığı tahmini), Breast-Cancer-ML (meme kanseri tespiti), Lung-Disease-CNN (akciğer hastalıkları tespiti için CNN modeli), Stress-Machine-Learning (stres seviyesi tahmini), Advertising-Machine-Learning (reklam etkinliği tahmini), Salary-Machine-Learning (maaş tahmini), House-Price-ML (ev fiyatı tahmini), Feature-Engineering-TelcoChurn (müşteri kaybı tahmini için özellik mühendisliği). Kullanılan teknolojiler: Python, Derin Öğrenme, CNN, Scikit-learn, TensorFlow, Keras."
+    },
+    {
+      "id": "experience_kaggle",
+      "title": "Deneyim - Kaggle Projeleri",
+      "content": "Kaggle platformunda (kaggle.com/mveysikahraman) 2023'ten itibaren veri bilimi ve makine öğrenmesi çalışmaları yapmaktadır. Projeler genellikle sınıflandırma ve görüntü işleme üzerinedir. Öne çıkan projeler: Classification + PCA (sınıflandırma ve boyut indirgeme teknikleri), Brain-Tumor MRI + CNN (beyin tümörü tespiti için CNN modeli). Kullanılan teknolojiler: Python, CNN, PCA, Scikit-learn, TensorFlow, Keras."
+    },
+    {
+      "id": "competition_btk",
+      "title": "Yarışma - BTK Datathon 2024",
+      "content": "BTK Datathon 2024 yarışmasına katıldı. Kategori: Makine Öğrenmesi. Sonuç: 364 takım arasında 79. sıra. Yarışmanın amacı, Girişimcilik Vakfı'nın gerçek verilerini kullanarak yeni başvuran bursiyerlerin kabul edilip edilmeyeceğini tahmin eden bir model geliştirmekti. Bursiyer seçim sürecine karar destek mekanizması olarak katkı sağlamak hedeflendi."
+    },
+    {
+      "id": "competition_zindi",
+      "title": "Yarışma - Zindi Amini Kakao Hastalık Tespiti",
+      "content": "Zindi / Amini Kakao Hastalık Tespiti Yarışması'na aktif olarak katılmaktadır. Kategori: Bilgisayarlı Görü (Computer Vision). Yarışmanın amacı, Afrika'daki kakao bitkilerinin hastalıklarını YOLO ile tespit etmektir. Takım arkadaşıyla birlikte Afrika sıralamasında 7. sırada yer almaktadır."
+    },
+    {
+      "id": "publications",
+      "title": "Yayınlar",
+      "content": "Muhammet Veysi Kahraman'ın henüz yayınlanmış akademik bir çalışması bulunmamaktadır."
+    },
+    {
+      "id": "contact",
+      "title": "İletişim ve Sosyal Medya",
+      "content": "Muhammet Veysi Kahraman ile iletişime geçmek için: LinkedIn: https://www.linkedin.com/in/muhammetveysikahraman/, GitHub: https://github.com/mveysi, Kaggle: https://www.kaggle.com/mveysikahraman. CV (özgeçmiş) sitesinden görüntülenebilir ve indirilebilir."
+    }
+  ]
+}

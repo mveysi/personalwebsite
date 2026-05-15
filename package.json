@@ -1,0 +1,11 @@
+{
+  "name": "mvk-personal-site",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build-kb": "node scripts/build_kb.mjs"
+  },
+  "dependencies": {
+    "openai": "^4.77.0"
+  }
+}
