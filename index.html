@@ -153,23 +153,24 @@
         }
         /* ── Contact toggle ── */
         .contact-toggle-btn {
-            margin-top: 1.5rem;
-            display: inline-flex;
+            margin-top: 2rem;
+            display: flex;
             align-items: center;
             gap: 0.4rem;
             background: none;
             border: 1px solid #ccc;
             border-radius: 999px;
-            padding: 0.4rem 1rem;
-            font-size: 0.85rem;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.82rem;
             font-family: inherit;
             color: #555;
             cursor: pointer;
             transition: border-color 0.2s, color 0.2s;
+            width: fit-content;
         }
         .contact-toggle-btn:hover { border-color: #007bff; color: #007bff; }
-        .contact-toggle-btn i { font-size: 0.8rem; transition: transform 0.25s; }
-        .contact-toggle-btn.open i { transform: rotate(180deg); }
+        .contact-toggle-btn i { font-size: 0.75rem; transition: transform 0.25s; }
+        .contact-toggle-btn.open i:last-child { transform: rotate(180deg); }
         /* ── Contact form ── */
         .contact-section {
             overflow: hidden;
@@ -181,13 +182,13 @@
         .contact-section.open {
             max-height: 600px;
             opacity: 1;
-            margin-top: 1.25rem;
+            margin-top: 1rem;
         }
         .contact-form {
             display: flex;
             flex-direction: column;
             gap: 0.6rem;
-            max-width: 340px;
+            width: 100%;
         }
         .form-group {
             display: flex;
@@ -297,6 +298,31 @@
                 <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
                 <a href="publications.html" data-i18n="nav_publications">Publications</a>
             </nav>
+
+            <button class="contact-toggle-btn" id="contact-toggle" aria-expanded="false">
+                <i class="fas fa-envelope"></i>
+                <span data-i18n="contact_title">Contact</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+
+            <section class="contact-section" id="contact" aria-hidden="true">
+                <form class="contact-form" id="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="contact-name" data-i18n="contact_name">Name</label>
+                        <input type="text" id="contact-name" name="name" required maxlength="255">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email" data-i18n="contact_email">Email</label>
+                        <input type="email" id="contact-email" name="email" required maxlength="255">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message" data-i18n="contact_message">Message</label>
+                        <textarea id="contact-message" name="message" rows="3" required maxlength="2000"></textarea>
+                    </div>
+                    <button type="submit" class="contact-submit" data-i18n="contact_send">Send</button>
+                    <p class="contact-feedback" id="contact-feedback"></p>
+                </form>
+            </section>
         </aside>
 
         <main class="main-content">
@@ -332,30 +358,6 @@
                     </center>
                 </section>
 
-                <button class="contact-toggle-btn" id="contact-toggle" aria-expanded="false">
-                    <i class="fas fa-envelope"></i>
-                    <span data-i18n="contact_title">Contact</span>
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-
-                <section class="contact-section" id="contact" aria-hidden="true">
-                    <form class="contact-form" id="contact-form" novalidate>
-                        <div class="form-group">
-                            <label for="contact-name" data-i18n="contact_name">Name</label>
-                            <input type="text" id="contact-name" name="name" required maxlength="255">
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-email" data-i18n="contact_email">Email</label>
-                            <input type="email" id="contact-email" name="email" required maxlength="255">
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-message" data-i18n="contact_message">Message</label>
-                            <textarea id="contact-message" name="message" rows="3" required maxlength="2000"></textarea>
-                        </div>
-                        <button type="submit" class="contact-submit" data-i18n="contact_send">Send</button>
-                        <p class="contact-feedback" id="contact-feedback"></p>
-                    </form>
-                </section>
             </div>
         </main>
     </div>
