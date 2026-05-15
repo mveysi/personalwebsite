@@ -14,14 +14,21 @@ function jsonResponse(body, status = 200) {
   });
 }
 
-function cosineSimilarity(a, b) {
-  let dot = 0, normA = 0, normB = 0;
-  for (let i = 0; i < a.length; i++) {
-    dot += a[i] * b[i];
-    normA += a[i] * a[i];
-    normB += b[i] * b[i];
-  }
-  return dot / (Math.sqrt(normA) * Math.sqrt(normB));
+// Keyword-based retrieval: score each chunk by how many query words it contains.
+// Works without an embeddings API call and is sufficient for a small knowledge base.
+function retrieveChunks(query, topK = 4) {
+  const words = query.toLowerCase().split(/\s+/).filter((w) => w.length > 2);
+  if (words.length === 0) return chunks;
+
+  const scored = chunks.map((c) => {
+    const text = (c.title + ' ' + c.content).toLowerCase();
+    const score = words.reduce((acc, w) => acc + (text.includes(w) ? 1 : 0), 0);
+    return { chunk: c, score };
+  });
+
+  const top = scored.sort((a, b) => b.score - a.score).slice(0, topK);
+  // If none matched, return all chunks (fallback)
+  return top.some((t) => t.score > 0) ? top.map((t) => t.chunk) : chunks;
 }
 
 export default async function handler(req) {
@@ -50,30 +57,12 @@ export default async function handler(req) {
   }
 
   try {
-    const client = new OpenAI({ apiKey });
-
-    const hasEmbeddings = chunks.every((c) => Array.isArray(c.embedding));
-    let contextChunks;
-
-    if (hasEmbeddings) {
-      const embedRes = await client.embeddings.create({
-        model: 'text-embedding-3-small',
-        input: message.trim(),
-      });
-      const queryVec = embedRes.data[0].embedding;
-
-      contextChunks = [...chunks]
-        .map((c) => ({ ...c, score: cosineSimilarity(queryVec, c.embedding) }))
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 3);
-    } else {
-      contextChunks = chunks;
-    }
-
+    const contextChunks = retrieveChunks(message.trim());
     const contextText = contextChunks
       .map((c) => `### ${c.title}\n${c.content}`)
       .join('\n\n');
 
+    const client = new OpenAI({ apiKey });
     const completion = await client.chat.completions.create({
       model: 'gpt-4o-mini',
       messages: [
