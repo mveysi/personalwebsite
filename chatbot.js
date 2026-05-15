@@ -122,7 +122,10 @@
 
   toggle.addEventListener('click', () => (opened ? closeChat() : openChat()));
   closeBtn.addEventListener('click', closeChat);
-  document.addEventListener('langchange', applyLang);
+  new MutationObserver(applyLang).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['lang'],
+  });
 
   // ── Send ───────────────────────────────────────────────────────────────────
   async function send() {
