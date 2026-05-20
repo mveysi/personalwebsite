@@ -110,46 +110,66 @@
         }
         .experience-entry {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
         }
         .company-logo {
             max-height: 85px;
             width: auto;
-            margin-bottom: 1.5rem;
+            margin: 0 auto 1.75rem;
+            display: block;
         }
-        .entry-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.35rem;
+        .entry-role {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 0 0 0.4rem 0;
+            color: #222;
+            letter-spacing: 0.01em;
         }
         .entry-company {
-            color: #555;
-            margin-bottom: 1rem;
-            font-weight: bold;
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: 400;
+            color: #333;
+            margin: 0 0 1rem 0;
         }
         .entry-date {
             font-size: 0.9rem;
             color: #777;
             font-style: italic;
-            margin-bottom: 1.25rem;
-        }
-        .entry-separator {
-            width: 80px;
-            height: 1px;
-            background-color: #ddd;
-            margin: 0 auto 1.5rem;
+            margin-bottom: 1.75rem;
         }
         .entry-body {
-            max-width: 600px;
+            max-width: 720px;
             margin: 0 auto;
-            text-align: left;
+            text-align: center;
         }
         .entry-body p {
-            margin-bottom: 0.75rem;
+            margin: 0 auto 0.85rem;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: #333;
+            max-width: 680px;
         }
         .entry-body ul {
-            padding-left: 1.2rem;
-            margin-top: 0.5rem;
+            list-style: disc;
+            list-style-position: inside;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 680px;
+        }
+        .entry-body li {
+            margin-bottom: 0.85rem;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: #333;
+            text-align: center;
+        }
+        .entry-body li:last-child {
+            margin-bottom: 0;
+        }
+        .entry-subheading {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
         }
         @media (max-width: 768px) {
             .layout {
@@ -177,12 +197,9 @@
                 text-align: center;
                 margin-bottom: 1.5rem;
             }
-            .entry-body {
+            .entry-body,
+            .entry-body li {
                 text-align: center;
-            }
-            .entry-body ul {
-                text-align: left;
-                display: inline-block;
             }
             .lang-switcher {
                 top: 3rem;
@@ -200,6 +217,7 @@
                 <a href="experience.html" class="active" data-i18n="nav_experience">Experience</a>
                 <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
                 <a href="publications.html" data-i18n="nav_publications">Publications</a>
+                <a href="sunumlar.html" data-i18n="nav_presentations">Presentations</a>
             </nav>
         </aside>
 
@@ -211,44 +229,40 @@
             <section class="timeline">
                 <article class="experience-entry">
                     <img src="./img/inosens-.png" alt="Inosens" class="company-logo" style="max-height: 110px;">
-                    <h2 class="entry-title" data-i18n="imona_title">Inosens</h2>
-                    <p class="entry-company">AI Developer</p>
-                    <p class="entry-date" data-i18n="imona_date">September 2025 - February 2026</p>
-                    <div class="entry-separator"></div>
+                    <h2 class="entry-role" data-i18n="role_ai_developer">AI Developer</h2>
+                    <p class="entry-company" data-i18n="inosens_title">Inosens</p>
+                    <p class="entry-date" data-i18n="inosens_date">September 2025 - June 2026</p>
                     <div class="entry-body">
                         <ul>
-                            <li data-i18n="imona_desc1">Built time series forecasting models (Prophet, ARIMA, SARIMA) on production datasets.</li>
-                            <li data-i18n="imona_desc2">Analyzed wearable sensor signals using NeuroKit, performing data cleaning and feature extraction.</li>
-                            <li data-i18n="imona_desc3">Developed machine learning models to predict patient scores in physiotherapy games.</li>
-                            <li data-i18n="imona_desc4">Trained video-based models with PyTorch and MediaPipe to evaluate exercise correctness.</li>
+                            <li data-i18n="inosens_desc1">Developing time series forecasting models (Prophet, ARIMA, SARIMA) on production data.</li>
+                            <li data-i18n="inosens_desc2">Performing data cleaning and feature extraction on wearable sensor signals using NeuroKit.</li>
+                            <li data-i18n="inosens_desc3">Designing machine learning models to predict patient scores in gamified physiotherapy.</li>
+                            <li data-i18n="inosens_desc4">Training computer vision models via PyTorch and MediaPipe to assess exercise accuracy.</li>
+                            <li data-i18n="inosens_desc5">Analyzing pediatric clinical datasets and developing custom ML algorithms for academic research ("Aktives").</li>
                         </ul>
                     </div>
                 </article>
 
                 <article class="experience-entry">
                     <img src="./img/imona_logo_color.png" alt="Imona Technologies Inc." class="company-logo">
-                    <h2 class="entry-title" data-i18n="imona_title_second">Imona Technologies Inc.</h2>
-                    <p class="entry-company">AI Developer</p>
+                    <h2 class="entry-role" data-i18n="role_ai_developer">AI Developer</h2>
+                    <p class="entry-company" data-i18n="imona_title_second">Imona Technologies Inc.</p>
                     <p class="entry-date" data-i18n="imona_date_second">April - May 2025</p>
-                    <div class="entry-separator"></div>
                     <div class="entry-body">
-                        <p data-i18n="imona_desc_second">I worked on developing a social media automation system using Make.com, gaining experience in automating content workflows and working with AI Agents. Through weekly presentations, I also improved my communication skills within the team and my professional presentation skills in business life.</p>
+                        <ul>
+                            <li data-i18n="imona_desc_second">Automating social media content workflows utilizing Make.com and AI Agent integrations.</li>
+                        </ul>
                     </div>
                 </article>
 
                 <article class="experience-entry">
                     <img src=".\img\1648661567174.jpg" alt="Venator UAV" class="company-logo">
-                    <h2 class="entry-title" data-i18n="venator_title">Venator UAV</h2>
-                    <p class="entry-company">IBU Venator UAV Software Team</p>
+                    <h2 class="entry-role" data-i18n="venator_title">Venator UAV</h2>
+                    <p class="entry-company" data-i18n="venator_team">IBU Venator UAV Software Team</p>
                     <p class="entry-date" data-i18n="venator_date">2023 - 2025</p>
-                    <div class="entry-separator"></div>
                     <div class="entry-body">
-                        <p data-i18n="venator_p1">I worked in the software team of the IBU Venator UAV project. In this project, I developed a model that detects fires using deep learning and computer vision, and worked on running this model on Raspberry Pi.</p>
-                        <p data-i18n="venator_p2">Achievements and Responsibilities:</p>
                         <ul>
-                            <li data-i18n="venator_li1">Developing and optimizing object detection algorithms</li>
-                            <li data-i18n="venator_li2">Designing autonomous take-off and landing systems</li>
-                            <li data-i18n="venator_li3">Implementing CNN, R-CNN and YOLO algorithms on Raspberry Pi</li>
+                            <li data-i18n="venator_desc">Developing real-time UAV fire detection models and optimizing object detection algorithms (YOLO, CNN) for edge deployment on Raspberry Pi.</li>
                         </ul>
                     </div>
                 </article>
@@ -274,19 +288,22 @@
                     nav_experience: "Deneyimler",
                     nav_competitions: "Yarışmalar",
                     nav_publications: "Yayınlar",
-                    imona_title: "Inosens",
-                    imona_date: "Eylül 2025 - Şubat 2026",
-                    imona_desc1: "Üretim veri setleri üzerinde zaman serisi tahmin modelleri (Prophet, ARIMA, SARIMA) geliştirdim.",
-                    imona_desc2: "NeuroKit kullanarak giyilebilir sensör sinyallerini analiz ettim, veri temizleme ve özellik çıkarımı gerçekleştirdim.",
-                    imona_desc3: "Fizyoterapi oyunlarında hasta skorlarını tahmin etmek için makine öğrenmesi modelleri geliştirdim.",
-                    imona_desc4: "PyTorch ve MediaPipe ile egzersiz doğruluğunu değerlendirmek için video tabanlı modeller eğittim.",
+                    nav_presentations: "Sunumlar",
+                    role_ai_developer: "Yapay Zeka Geliştiricisi",
+                    inosens_title: "Inosens",
+                    inosens_date: "Eylül 2025 - Haziran 2026",
+                    inosens_desc1: "Prophet, ARIMA ve SARIMA ile üretim verilerinde zaman serisi tahmin modelleri geliştirme.",
+                    inosens_desc2: "NeuroKit kullanarak giyilebilir sensör sinyallerinde veri temizleme ve öznitelik çıkarımı gerçekleştirme.",
+                    inosens_desc3: "Fizyoterapi oyunları için hasta skorlarını öngören makine öğrenmesi modelleri tasarlama.",
+                    inosens_desc4: "PyTorch ve MediaPipe ile egzersiz formunu değerlendiren bilgisayarlı görü modelleri eğitme.",
+                    inosens_desc5: "Akademik araştırmalar (\"Aktives\") için pediatrik klinik verileri analiz etme ve ML algoritmaları geliştirme.",
+                    imona_title_second: "Imona Technologies Inc.",
+                    imona_date_second: "Nisan - Mayıs 2025",
+                    imona_desc_second: "Make.com ve AI Agent entegrasyonlarıyla sosyal medya içerik iş akışlarını otomatikleştirme.",
                     venator_title: "Venator İHA",
+                    venator_team: "İBU Venator İHA Yazılım Ekibi",
                     venator_date: "2023 - 2025",
-                    venator_p1: "İBU Venator İHA projesinde yazılım ekibinde görev aldım. Bu projede derin öğrenme ve görüntü işleme kullanarak yangın tespiti sağlayan bir model geliştirdim ve bu modeli Raspberry Pi üzerinde çalıştırmak için çalışmalar yaptım.",
-                    venator_p2: "Başarılar ve Sorumluluklar:",
-                    venator_li1: "Nesne tespit algoritmaları geliştirme ve optimizasyon",
-                    venator_li2: "Otonom iniş-kalkış sistemleri tasarımı",
-                    venator_li3: "CNN, R-CNN ve YOLO algoritmalarını Raspberry Pi üzerinde uygulama",
+                    venator_desc: "İHA'lar için gerçek zamanlı yangın tespit modelleri geliştirme ve nesne tespiti algoritmalarını (YOLO, CNN) uç cihazlarda (Raspberry Pi) çalışacak şekilde optimize etme.",
                     venator_stack1: "Python",
                     venator_stack2: "YOLO",
                     venator_stack3: "OpenCV",
@@ -321,19 +338,22 @@
                     nav_experience: "Experience",
                     nav_competitions: "Competitions",
                     nav_publications: "Publications",
-                    imona_title: "Inosens",
-                    imona_date: "September 2025 - February 2026",
-                    imona_desc1: "Built time series forecasting models (Prophet, ARIMA, SARIMA) on production datasets.",
-                    imona_desc2: "Analyzed wearable sensor signals using NeuroKit, performing data cleaning and feature extraction.",
-                    imona_desc3: "Developed machine learning models to predict patient scores in physiotherapy games.",
-                    imona_desc4: "Trained video-based models with PyTorch and MediaPipe to evaluate exercise correctness.",
+                    nav_presentations: "Presentations",
+                    role_ai_developer: "AI Developer",
+                    inosens_title: "Inosens",
+                    inosens_date: "September 2025 - June 2026",
+                    inosens_desc1: "Developing time series forecasting models (Prophet, ARIMA, SARIMA) on production data.",
+                    inosens_desc2: "Performing data cleaning and feature extraction on wearable sensor signals using NeuroKit.",
+                    inosens_desc3: "Designing machine learning models to predict patient scores in gamified physiotherapy.",
+                    inosens_desc4: "Training computer vision models via PyTorch and MediaPipe to assess exercise accuracy.",
+                    inosens_desc5: "Analyzing pediatric clinical datasets and developing custom ML algorithms for academic research (\"Aktives\").",
+                    imona_title_second: "Imona Technologies Inc.",
+                    imona_date_second: "April - May 2025",
+                    imona_desc_second: "Automating social media content workflows utilizing Make.com and AI Agent integrations.",
                     venator_title: "Venator UAV",
+                    venator_team: "IBU Venator UAV Software Team",
                     venator_date: "2023 - 2025",
-                    venator_p1: "I worked in the software team of the IBU Venator UAV project. In this project, I developed a model that detects fires using deep learning and computer vision, and worked on running this model on Raspberry Pi.",
-                    venator_p2: "Achievements and Responsibilities:",
-                    venator_li1: "Developing and optimizing object detection algorithms",
-                    venator_li2: "Designing autonomous take-off and landing systems",
-                    venator_li3: "Implementing CNN, R-CNN and YOLO algorithms on Raspberry Pi",
+                    venator_desc: "Developing real-time UAV fire detection models and optimizing object detection algorithms (YOLO, CNN) for edge deployment on Raspberry Pi.",
                     venator_stack1: "Python",
                     venator_stack2: "YOLO",
                     venator_stack3: "OpenCV",

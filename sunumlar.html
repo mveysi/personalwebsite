@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title">Publications</title>
+    <title data-i18n="title">Presentations</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="chatbot.css">
     <style>
@@ -99,7 +99,7 @@
         .timeline {
             margin-top: 2.5rem;
         }
-        .publication-entry {
+        .presentation-entry {
             text-align: center;
             margin-bottom: 4rem;
         }
@@ -108,13 +108,26 @@
             font-weight: 600;
             margin-bottom: 0.75rem;
         }
+        .entry-meta {
+            color: #555;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
         .entry-description {
-            font-size: 0.9rem;
-            color: #777;
+            font-size: 0.95rem;
+            color: #555;
             margin-bottom: 1.25rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+        }
+        .presentation-image {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            margin: 0 auto 1.25rem;
+            display: block;
         }
         .entry-separator {
             width: 80px;
@@ -163,20 +176,22 @@
                 <a href="education.html" data-i18n="nav_education">Education</a>
                 <a href="experience.html" data-i18n="nav_experience">Experience</a>
                 <a href="competitions.html" data-i18n="nav_competitions">Competitions</a>
-                <a href="publications.html" class="active" data-i18n="nav_publications">Publications</a>
-                <a href="sunumlar.html" data-i18n="nav_presentations">Presentations</a>
+                <a href="publications.html" data-i18n="nav_publications">Publications</a>
+                <a href="sunumlar.html" class="active" data-i18n="nav_presentations">Presentations</a>
             </nav>
         </aside>
 
         <main class="main-content">
             <div class="header">
-                <h1 data-i18n="title">Publications</h1>
+                <h1 data-i18n="title">Presentations</h1>
             </div>
 
             <section class="timeline">
-                <article class="publication-entry">
-                    <h2 class="entry-title" data-i18n="pub_title">Publications</h2>
-                    <p class="entry-description" data-i18n="pub_desc">I do not have any published work yet.</p>
+                <article class="presentation-entry">
+                    <img src="./img/ai-agent-seminer.png" alt="AI and AI Agent Seminar Presentation" class="presentation-image" data-i18n-alt="sem_image_alt">
+                    <h2 class="entry-title" data-i18n="sem_title">AI and AI Agent Seminar</h2>
+                    <p class="entry-meta" data-i18n="sem_meta">BAİBÜ Matematik Bölümü - 2026</p>
+                    <p class="entry-description" data-i18n="sem_desc">A seminar on AI and AI Agents was organized for the Department of Mathematics and a presentation was delivered.</p>
                     <div class="entry-separator"></div>
                 </article>
             </section>
@@ -192,30 +207,30 @@
         (function() {
             const translations = {
                 tr: {
-                    title: "Yayınlar",
-                    hero_name: "@ Muhammet Veysi Kahraman",
-                    hero_role: "Öğrenci",
+                    title: "Sunumlar",
                     nav_about: "Hakkımda",
                     nav_education: "Eğitim",
                     nav_experience: "Deneyimler",
                     nav_competitions: "Yarışmalar",
                     nav_publications: "Yayınlar",
                     nav_presentations: "Sunumlar",
-                    pub_title: "Yayınlar",
-                    pub_desc: "Henüz yayınlanmış bir çalışmam bulunmamaktadır."
+                    sem_title: "AI ve AI Agent Semineri",
+                    sem_image_alt: "AI ve AI Agent semineri sunum görseli",
+                    sem_meta: "BAİBÜ Matematik Bölümü - 2026",
+                    sem_desc: "Matematik Bölümü için AI ve AI Agent konusunda bir seminer düzenlendi ve sunum gerçekleştirildi."
                 },
                 en: {
-                    title: "Publications",
-                    hero_name: "@ Muhammet Veysi Kahraman",
-                    hero_role: "Student",
+                    title: "Presentations",
                     nav_about: "About",
                     nav_education: "Education",
                     nav_experience: "Experience",
                     nav_competitions: "Competitions",
                     nav_publications: "Publications",
                     nav_presentations: "Presentations",
-                    pub_title: "Publications",
-                    pub_desc: "I do not have any published work yet."
+                    sem_title: "AI and AI Agent Seminar",
+                    sem_image_alt: "AI and AI Agent seminar presentation image",
+                    sem_meta: "BAIBU Mathematics Department - 2026",
+                    sem_desc: "A seminar on AI and AI Agents was organized for the Department of Mathematics and a presentation was delivered."
                 }
             };
 
@@ -226,6 +241,12 @@
                     const key = el.getAttribute("data-i18n");
                     if (dict[key]) {
                         el.textContent = dict[key];
+                    }
+                });
+                document.querySelectorAll("[data-i18n-alt]").forEach(function(el) {
+                    const key = el.getAttribute("data-i18n-alt");
+                    if (dict[key]) {
+                        el.setAttribute("alt", dict[key]);
                     }
                 });
                 document.querySelectorAll(".lang-btn").forEach(function(btn) {
