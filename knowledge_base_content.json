@@ -2,53 +2,63 @@
   "chunks": [
     {
       "id": "about",
-      "title": "Hakkımda - Muhammet Veysi Kahraman",
-      "content": "Muhammet Veysi Kahraman bir matematik öğrencisidir. Bolu Abant İzzet Baysal Üniversitesi Matematik Bölümü'nde 2021 yılından itibaren eğitim almaktadır. Aynı zamanda Veri Bilimi, Makine Öğrenmesi, Derin Öğrenme, Doğal Dil İşleme (NLP, LLM, AI Agents) ve görüntü işleme üzerine çalışmalar yapmaktadır. Yapay zekâ teknolojilerindeki gelişmeleri yakından takip etmekte, bireysel ve ekip projeleri geliştirmektedir. Amacı matematiksel bakış açısını yapay zekâ uygulamalarıyla birleştirerek yenilikçi çözümler üretmektir. LinkedIn: https://www.linkedin.com/in/muhammetveysikahraman/, GitHub: https://github.com/mveysi, Kaggle: https://www.kaggle.com/mveysikahraman"
+      "title": "About - Muhammet Veysi Kahraman",
+      "content": "Muhammet Veysi Kahraman is a data scientist who designs end-to-end artificial intelligence products by combining mathematical theories with machine learning algorithms. He completed his undergraduate education in the Mathematics Department at Bolu Abant Izzet Baysal University (BAIBU) and specializes in Natural Language Processing (NLP, LLM, AI Agents), Image Processing, Machine Learning, and Data Science. Regardless of the industry, he actively conducts research in every branch of machine learning and deep learning. He dedicates time to both personal projects and competitions, constantly applying his theoretical knowledge in practice. In project development, he uses lightweight and interpretable approaches for traditional ML problems, and modern deep learning architectures for complex AI and autonomous systems (AI Agents). Title: JR. AI Developer. LinkedIn: https://www.linkedin.com/in/muhammetveysikahraman/, GitHub: https://github.com/mveysi, Kaggle: https://www.kaggle.com/mveysikahraman"
     },
     {
       "id": "education",
-      "title": "Eğitim",
-      "content": "Muhammet Veysi Kahraman, Bolu Abant İzzet Baysal Üniversitesi (BAIBU) Matematik Bölümü'nde lisans eğitimi almaktadır. Eğitim dönemi: 2021-2026 (devam ediyor). Not ortalaması (GPA): 2.97/4.00."
+      "title": "Education",
+      "content": "Muhammet Veysi Kahraman completed his undergraduate degree in Mathematics Engineering Program (BSc.) at Bolu Abant Izzet Baysal University (BAIBU). Study period: 2021 - 2026. GPA: 3.09 / 4.0."
+    },
+    {
+      "id": "experience_inosens",
+      "title": "Experience - Inosens",
+      "content": "Muhammet Veysi Kahraman worked as an AI Developer at Inosens from September 2025 to June 2026. Responsibilities: Developing time series forecasting models (Prophet, ARIMA, SARIMA) on production data. Performing data cleaning and feature extraction on wearable sensor signals using NeuroKit. Designing machine learning models to predict patient scores in gamified physiotherapy. Training computer vision models via PyTorch and MediaPipe to assess exercise accuracy. Analyzing pediatric clinical datasets and developing custom ML algorithms for academic research (Aktives project). Technologies: Python, Prophet, ARIMA, SARIMA, NeuroKit, PyTorch, MediaPipe, Machine Learning."
     },
     {
       "id": "experience_imona",
-      "title": "Deneyim - İmona Technologies",
-      "content": "İmona Technologies A.Ş.'de Nisan - Mayıs 2025 tarihleri arasında çalıştı. Make.com kullanarak sosyal medya otomasyon sistemi geliştirme üzerine çalıştı. İçerik süreçlerinin otomasyonu ve AI Agent'larla çalışma konusunda deneyim kazandı. Haftalık sunumlarla takım içi iletişim ve profesyonel sunum becerileri geliştirdi. Kullanılan teknolojiler: Make.com, Otomasyon, AI Agent, Sosyal Medya."
+      "title": "Experience - Imona Technologies",
+      "content": "Muhammet Veysi Kahraman worked as an AI Developer at Imona Technologies Inc. from April to May 2025. He automated social media content workflows utilizing Make.com and AI Agent integrations. Technologies: Make.com, Automation, AI Agent, Social Media."
     },
     {
       "id": "experience_venator",
-      "title": "Deneyim - Venator İHA (İnsansız Hava Aracı)",
-      "content": "İBU Venator İHA projesinde 2023-2025 yılları arasında yazılım ekibinde görev aldı. Derin öğrenme ve görüntü işleme kullanarak yangın tespiti sağlayan bir model geliştirdi ve bu modeli Raspberry Pi üzerinde çalıştırdı. Başarılar: Nesne tespit algoritmaları geliştirme ve optimizasyon, Otonom iniş-kalkış sistemleri tasarımı, CNN, R-CNN ve YOLO algoritmalarını Raspberry Pi üzerinde uygulama. Kullanılan teknolojiler: Python, YOLO, OpenCV, Derin Öğrenme, Raspberry Pi."
+      "title": "Experience - Venator UAV",
+      "content": "Muhammet Veysi Kahraman was a member of the IBU Venator UAV Software Team from 2023 to 2025. He developed real-time UAV fire detection models and optimized object detection algorithms (YOLO, CNN) for edge deployment on Raspberry Pi. He also worked on autonomous landing and takeoff systems. Technologies: Python, YOLO, OpenCV, Deep Learning, Raspberry Pi, CNN, R-CNN."
     },
     {
       "id": "experience_github",
-      "title": "Deneyim - GitHub Projeleri",
-      "content": "GitHub profilinde (github.com/mveysi) 2023'ten itibaren çeşitli makine öğrenmesi ve derin öğrenme projeleri bulunmaktadır. Öne çıkan projeler: Feature-Engineering-Diabetes (diyabet hastalığı tahmini), Heart-Diseases-Machine-Learning (kalp hastalığı tahmini), Breast-Cancer-ML (meme kanseri tespiti), Lung-Disease-CNN (akciğer hastalıkları tespiti için CNN modeli), Stress-Machine-Learning (stres seviyesi tahmini), Advertising-Machine-Learning (reklam etkinliği tahmini), Salary-Machine-Learning (maaş tahmini), House-Price-ML (ev fiyatı tahmini), Feature-Engineering-TelcoChurn (müşteri kaybı tahmini için özellik mühendisliği). Kullanılan teknolojiler: Python, Derin Öğrenme, CNN, Scikit-learn, TensorFlow, Keras."
+      "title": "GitHub Projects",
+      "content": "Muhammet Veysi Kahraman's GitHub profile (github.com/mveysi) contains various machine learning and deep learning projects since 2023. Notable projects: Feature-Engineering-Diabetes (diabetes prediction), Heart-Diseases-Machine-Learning (heart disease prediction), Breast-Cancer-ML (breast cancer detection), Lung-Disease-CNN (lung disease detection with CNN), Stress-Machine-Learning (stress level prediction), Advertising-Machine-Learning (advertising effectiveness prediction), Salary-Machine-Learning (salary prediction), House-Price-ML (house price prediction), Feature-Engineering-TelcoChurn (customer churn feature engineering). Technologies: Python, Deep Learning, CNN, Scikit-learn, TensorFlow, Keras."
     },
     {
       "id": "experience_kaggle",
-      "title": "Deneyim - Kaggle Projeleri",
-      "content": "Kaggle platformunda (kaggle.com/mveysikahraman) 2023'ten itibaren veri bilimi ve makine öğrenmesi çalışmaları yapmaktadır. Projeler genellikle sınıflandırma ve görüntü işleme üzerinedir. Öne çıkan projeler: Classification + PCA (sınıflandırma ve boyut indirgeme teknikleri), Brain-Tumor MRI + CNN (beyin tümörü tespiti için CNN modeli). Kullanılan teknolojiler: Python, CNN, PCA, Scikit-learn, TensorFlow, Keras."
+      "title": "Kaggle Projects",
+      "content": "Muhammet Veysi Kahraman actively works on data science and machine learning projects on Kaggle (kaggle.com/mveysikahraman) since 2023. Projects focus on classification and computer vision. Notable projects: Classification + PCA (classification and dimensionality reduction), Brain-Tumor MRI + CNN (brain tumor detection). Technologies: Python, CNN, PCA, Scikit-learn, TensorFlow, Keras."
     },
     {
       "id": "competition_btk",
-      "title": "Yarışma - BTK Datathon 2024",
-      "content": "BTK Datathon 2024 yarışmasına katıldı. Kategori: Makine Öğrenmesi. Sonuç: 364 takım arasında 79. sıra. Yarışmanın amacı, Girişimcilik Vakfı'nın gerçek verilerini kullanarak yeni başvuran bursiyerlerin kabul edilip edilmeyeceğini tahmin eden bir model geliştirmekti. Bursiyer seçim sürecine karar destek mekanizması olarak katkı sağlamak hedeflendi."
+      "title": "Competition - BTK Datathon 2024",
+      "content": "Muhammet Veysi Kahraman participated in the BTK Datathon 2024 competition. Category: Machine Learning. The aim of the competition was to develop a model that predicts whether new applicants will be accepted as scholars using the real data of the Entrepreneurship Foundation, contributing as a decision support mechanism to the scholarship selection process."
     },
     {
       "id": "competition_zindi",
-      "title": "Yarışma - Zindi Amini Kakao Hastalık Tespiti",
-      "content": "Zindi / Amini Kakao Hastalık Tespiti Yarışması'na aktif olarak katılmaktadır. Kategori: Bilgisayarlı Görü (Computer Vision). Yarışmanın amacı, Afrika'daki kakao bitkilerinin hastalıklarını YOLO ile tespit etmektir. Takım arkadaşıyla birlikte Afrika sıralamasında 7. sırada yer almaktadır."
+      "title": "Competition - Zindi Amini Cacao Disease Detection",
+      "content": "Muhammet Veysi Kahraman participated in the Zindi / Amini Cacao Disease Detection Challenge. Category: Computer Vision. The goal was to detect diseases of cacao plants in Africa using YOLO. He is currently ranked 7th in Africa in this competition together with his teammate."
+    },
+    {
+      "id": "presentations",
+      "title": "Presentations - AI and AI Agent Seminar",
+      "content": "Muhammet Veysi Kahraman organized and delivered a seminar on AI and AI Agents for the Mathematics Department at Bolu Abant Izzet Baysal University (BAIBU) in 2026. The seminar covered artificial intelligence and AI Agent technologies."
     },
     {
       "id": "publications",
-      "title": "Yayınlar",
-      "content": "Muhammet Veysi Kahraman'ın henüz yayınlanmış akademik bir çalışması bulunmamaktadır."
+      "title": "Publications",
+      "content": "Muhammet Veysi Kahraman does not have any published academic work yet."
     },
     {
       "id": "contact",
-      "title": "İletişim ve Sosyal Medya",
-      "content": "Muhammet Veysi Kahraman ile iletişime geçmek için: LinkedIn: https://www.linkedin.com/in/muhammetveysikahraman/, GitHub: https://github.com/mveysi, Kaggle: https://www.kaggle.com/mveysikahraman. CV (özgeçmiş) sitesinden görüntülenebilir ve indirilebilir."
+      "title": "Contact and Social Media",
+      "content": "To contact Muhammet Veysi Kahraman: LinkedIn: https://www.linkedin.com/in/muhammetveysikahraman/, GitHub: https://github.com/mveysi, Kaggle: https://www.kaggle.com/mveysikahraman. CV (resume) can be viewed and downloaded from the website."
     }
   ]
 }
