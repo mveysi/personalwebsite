@@ -120,6 +120,23 @@
             margin-left: auto;
             margin-right: auto;
         }
+        .github-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.4rem;
+            background-color: #24292f;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .github-button:hover {
+            background-color: #007bff;
+            transform: translateY(-2px);
+        }
         .entry-separator {
             width: 80px;
             height: 1px;
@@ -181,8 +198,8 @@
                 <article class="competition-entry">
                     <h2 class="entry-title" data-i18n="trendyol_title">Trendyol E-Commerce Competition 2026</h2>
                     <p class="entry-category"><strong data-i18n="label_category">Category:</strong> <span data-i18n="trendyol_cat">Natural Language Processing / Machine Learning</span></p>
-                    <p class="entry-description" data-i18n="trendyol_desc">A query–product matching model developed for the Trendyol E-Commerce Competition on Kaggle, predicting whether a search query and a product are relevant. A two-stage hybrid was built: a LightGBM ensemble trained on 23 features (TF-IDF, BM25, fuzzy matching, and semantic similarity from a fine-tuned multilingual bi-encoder) makes the initial decision, while a Turkish BERT cross-encoder re-evaluates only the uncertain cases. Hard-negative and LLM-generated synthetic negative sampling were used, reaching a 0.863 macro F1 score on the public leaderboard.</p>
-                    <p class="entry-description"><a href="https://github.com/mveysi/trendyolproductmatch" target="_blank" rel="noopener">GitHub</a></p>
+                    <p class="entry-description" data-i18n="trendyol_desc">A query–product matching model built on Kaggle. A LightGBM ensemble makes the initial prediction, and a Turkish BERT cross-encoder re-evaluates the uncertain cases, reaching 0.863 macro F1 on the public leaderboard.</p>
+                    <a class="github-button" href="https://github.com/mveysi/trendyolproductmatch" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
                     <div class="entry-separator"></div>
                 </article>
 
@@ -225,7 +242,7 @@
                     label_desc: "Açıklama:",
                     trendyol_title: "2026 Trendyol E-Ticaret Yarışması",
                     trendyol_cat: "Doğal Dil İşleme / Makine Öğrenmesi",
-                    trendyol_desc: "Kaggle üzerinde düzenlenen Trendyol E-Ticaret Yarışması için, bir arama sorgusu ile ürünün eşleşip eşleşmediğini tahmin eden bir ürün eşleme modeli geliştirdim. İki aşamalı hibrit bir yapı kuruldu: TF-IDF, BM25, bulanık eşleşme ve fine-tune edilmiş çok dilli bir bi-encoder'dan elde edilen anlamsal benzerlik gibi 23 özellik üzerinde eğitilen LightGBM topluluğu ilk kararı verirken, yalnızca belirsiz kalan örnekler Türkçe BERT tabanlı bir cross-encoder ile yeniden değerlendirildi. Zor negatif ve LLM ile üretilmiş sentetik negatif örnekleme kullanılarak public leaderboard'da 0.863 macro F1 skoru elde edildi.",
+                    trendyol_desc: "Kaggle üzerinde arama sorgusu–ürün eşleme modeli geliştirdim. LightGBM topluluğu ilk tahmini yaparken, belirsiz örnekler Türkçe BERT tabanlı bir cross-encoder ile yeniden değerlendirildi ve public leaderboard'da 0.863 macro F1 skoru elde edildi.",
                     btk_title: "BTK Datathon 2024",
                     btk_cat: "Makine Öğrenmesi",
                     btk_desc: "Yarışmanın amacı, Girişimcilik Vakfı'nın gerçek verilerini kullanarak yeni başvuran bursiyerlerin kabul edilip edilmeyeceğini tahmin eden bir model geliştirmek. Bursiyer seçim sürecine karar destek mekanizması olarak katkı sağlamaktır.",
@@ -247,7 +264,7 @@
                     label_desc: "Description:",
                     trendyol_title: "Trendyol E-Commerce Competition 2026",
                     trendyol_cat: "Natural Language Processing / Machine Learning",
-                    trendyol_desc: "A query–product matching model developed for the Trendyol E-Commerce Competition on Kaggle, predicting whether a search query and a product are relevant. A two-stage hybrid was built: a LightGBM ensemble trained on 23 features (TF-IDF, BM25, fuzzy matching, and semantic similarity from a fine-tuned multilingual bi-encoder) makes the initial decision, while a Turkish BERT cross-encoder re-evaluates only the uncertain cases. Hard-negative and LLM-generated synthetic negative sampling were used, reaching a 0.863 macro F1 score on the public leaderboard.",
+                    trendyol_desc: "A query–product matching model built on Kaggle. A LightGBM ensemble makes the initial prediction, and a Turkish BERT cross-encoder re-evaluates the uncertain cases, reaching 0.863 macro F1 on the public leaderboard.",
                     btk_title: "BTK Datathon 2024",
                     btk_cat: "Machine Learning",
                     btk_desc: "The aim of the competition is to develop a model that predicts whether new applicants will be accepted as scholars by using the real data of the Entrepreneurship Foundation, contributing as a decision support mechanism to the scholarship selection process.",
