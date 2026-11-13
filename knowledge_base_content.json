@@ -8,12 +8,12 @@
     {
       "id": "education",
       "title": "Education",
-      "content": "Muhammet Veysi Kahraman completed his undergraduate degree in Mathematics English Program (BSc.) at Bolu Abant Izzet Baysal University (BAIBU). Study period: 2021 - 2026. GPA: 3.09 / 4.0."
+      "content": "Muhammet Veysi Kahraman completed his undergraduate degree in Mathematics English Program (BSc.) at Bolu Abant Izzet Baysal University (BAIBU). Study period: 2021 - 2026. GPA: 3.16 / 4.0."
     },
     {
       "id": "experience_inosens",
       "title": "Experience - Inosens",
-      "content": "Muhammet Veysi Kahraman worked as an AI Developer at Inosens from September 2025 to June 2026. Responsibilities: Developing time series forecasting models (Prophet, ARIMA, SARIMA) on production data. Performing data cleaning and feature extraction on wearable sensor signals using NeuroKit. Designing machine learning models to predict patient scores in gamified physiotherapy. Training computer vision models via PyTorch and MediaPipe to assess exercise accuracy. Analyzing pediatric clinical datasets and developing custom ML algorithms for academic research (Aktives project). Technologies: Python, Prophet, ARIMA, SARIMA, NeuroKit, PyTorch, MediaPipe, Machine Learning."
+      "content": "Muhammet Veysi Kahraman worked as an AI Developer at Inosens from September 2025 to August 2026. Responsibilities: Developing time series forecasting models (Prophet, ARIMA, SARIMA) on production data. Performing data cleaning and feature extraction on wearable sensor signals using NeuroKit. Designing machine learning models to predict patient scores in gamified physiotherapy. Training computer vision models via PyTorch and MediaPipe to assess exercise accuracy. Analyzing pediatric clinical datasets and developing custom ML algorithms for academic research (Aktives project). Technologies: Python, Prophet, ARIMA, SARIMA, NeuroKit, PyTorch, MediaPipe, Machine Learning."
     },
     {
       "id": "experience_imona",
@@ -34,6 +34,11 @@
       "id": "experience_kaggle",
       "title": "Kaggle Projects",
       "content": "Muhammet Veysi Kahraman actively works on data science and machine learning projects on Kaggle (kaggle.com/mveysikahraman) since 2023. Projects focus on classification and computer vision. Notable projects: Classification + PCA (classification and dimensionality reduction), Brain-Tumor MRI + CNN (brain tumor detection). Technologies: Python, CNN, PCA, Scikit-learn, TensorFlow, Keras."
+    },
+    {
+      "id": "competition_trendyol",
+      "title": "Competition - Trendyol E-Commerce Competition 2026",
+      "content": "Muhammet Veysi Kahraman participated in the Trendyol E-Commerce Competition 2026 on Kaggle. Category: Natural Language Processing / Machine Learning. He built a query-product matching model that predicts whether a search query and a product are relevant (binary classification, evaluated with macro F1). The solution is a two-stage hybrid: a 5-seed LightGBM ensemble trained on 23 features (TF-IDF, BM25, fuzzy matching, brand/category matching, and semantic similarity from a fine-tuned paraphrase-multilingual-mpnet-base-v2 bi-encoder) makes the initial decision, and a Turkish BERT cross-encoder (dbmdz/bert-base-turkish-cased) re-evaluates only the uncertain cases. Hard-negative and LLM-generated synthetic negative sampling were used. The model reached a 0.863 macro F1 score on the public leaderboard. GitHub: https://github.com/mveysi/trendyolproductmatch"
     },
     {
       "id": "competition_btk",
