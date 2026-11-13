@@ -109,7 +109,7 @@
         }
         .social-links a {
             margin: 0 1rem;
-            color: #333;
+            color: #fff;
             text-decoration: none;
             font-size: 1.2rem;
             transition: all 0.3s ease;
@@ -117,14 +117,17 @@
             align-items: center;
             justify-content: center;
             padding: 0.6rem 1.2rem;
-            border: 1px solid #000;
+            border: none;
             border-radius: 999px;
             min-width: 130px;
         }
+        .social-links a.linkedin { background-color: #0a66c2; }
+        .social-links a.github   { background-color: #24292f; }
+        .social-links a.kaggle   { background-color: #20beff; }
         .social-links a:hover {
-            color: #007bff;
-            border-color: #007bff;
+            filter: brightness(0.88);
             transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
         .social-links i {
             margin-right: 5px;
@@ -334,13 +337,13 @@
                     <p data-i18n="about_p3">In project development processes, Muhammet has made it a principle to use lightweight, fast, and interpretable approaches for traditional machine learning problems, and modern deep learning architectures for complex artificial intelligence and autonomous systems (AI Agents).</p>   
 
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/muhammetveysikahraman/" target="_blank">
+                        <a class="linkedin" href="https://www.linkedin.com/in/muhammetveysikahraman/" target="_blank">
                             <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
-                        <a href="https://github.com/mveysi" target="_blank">
+                        <a class="github" href="https://github.com/mveysi" target="_blank">
                             <i class="fab fa-github"></i> GitHub
                         </a>
-                        <a href="https://www.kaggle.com/mveysikahraman" target="_blank">
+                        <a class="kaggle" href="https://www.kaggle.com/mveysikahraman" target="_blank">
                             <i class="fab fa-kaggle"></i> Kaggle
                         </a>
                     </div>
